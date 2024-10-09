@@ -1,26 +1,34 @@
-import { useState, useEffect } from "react";
-import { Switch } from "./interfaces/Switch";
+import { useEffect, useState } from "react";
+import { createClient } from "@supabase/supabase-js";
+import { Database, Tables } from "./database/database.types";
 
-const baseURL = import.meta.env.VITE_BASE_URL;
+const URL = import.meta.env.VITE_SUPABASE_URL;
+const KEY = import.meta.env.VITE_SUPABASE_KEY;
+const supabase = createClient<Database>(URL, KEY);
 
 const App = () => {
-  const [switches, setSwitches] = useState([]);
+  const [switches, setSwitches] = useState<Tables<"Switches">[] | null>([]);
 
   useEffect(() => {
-    fetch(`${baseURL}/switches`)
-      .then((response) => response.json())
-      .then((json) => setSwitches(json))
-      .catch((error) => console.error(error));
+    getSwitches();
   }, []);
+
+  async function getSwitches() {
+    const { data } = await supabase
+      .from("Switches")
+      .select()
+      .returns<Tables<"Switches">[]>();
+    setSwitches(data);
+  }
 
   return (
     <>
       <h1>SwitchBoard</h1>
-      {switches.map((s: Switch) => {
-        return (
-          <li>{s.name}</li>
-        );
-      })}
+      <ul>
+        {switches?.map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
     </>
   );
 };
