@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
-import { Database, Tables } from "./database/database.types";
+import supabase from "../supabaseClient";
+import { Tables } from "../Database/database.types";
 
-const URL = import.meta.env.VITE_SUPABASE_URL;
-const KEY = import.meta.env.VITE_SUPABASE_KEY;
-const supabase = createClient<Database>(URL, KEY);
-
-const App = () => {
+const Root = () => {
   const [switches, setSwitches] = useState<Tables<"Switches">[] | null>([]);
 
   useEffect(() => {
@@ -33,4 +29,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Root;
