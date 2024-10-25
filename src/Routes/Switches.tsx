@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import supabase from "../supabaseClient";
 import { Tables } from "../Database/database.types";
 
-const Root = () => {
+const Switches = () => {
   const [switches, setSwitches] = useState<Tables<"Switches">[] | null>([]);
 
   useEffect(() => {
@@ -16,7 +16,6 @@ const Root = () => {
       .returns<Tables<"Switches">[]>();
     setSwitches(data);
   }
-
   return (
     <>
       <h1>SwitchBoard</h1>
@@ -29,4 +28,4 @@ const Root = () => {
   );
 };
 
-export default Root;
+export default Switches;
