@@ -15,9 +15,8 @@ const initialState: SwitchesState = {
 };
 
 export const fetchData = createAsyncThunk(
-    "supabase/fetchData",
+    "switches/fetchData",
     async (_, thunkAPI) => {
-        console.log("I have been called");
         try {
             const { data, error } = await supabase.from("Switches").select();
             if (error) throw error;

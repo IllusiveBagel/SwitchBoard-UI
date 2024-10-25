@@ -12,7 +12,6 @@ const Switches = () => {
     const isLoading = useAppSelector(selectLoading);
 
     useEffect(() => {
-        console.log("I AM HERE");
         dispatch(fetchData());
     }, []);
 
