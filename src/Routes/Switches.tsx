@@ -1,21 +1,22 @@
-import { useEffect, useState } from "react";
-import supabase from "../supabaseClient";
-import { Tables } from "../Database/database.types";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../App/hooks";
+import {
+    fetchData,
+    selectSwitches,
+    selectLoading,
+} from "../Features/Switches/switchesSlice";
 
 const Switches = () => {
-    const [switches, setSwitches] = useState<Tables<"Switches">[] | null>([]);
+    const dispatch = useAppDispatch();
+    const switches = useAppSelector(selectSwitches);
+    const isLoading = useAppSelector(selectLoading);
 
     useEffect(() => {
-        getSwitches();
+        console.log("I AM HERE");
+        dispatch(fetchData());
     }, []);
 
-    async function getSwitches() {
-        const { data } = await supabase
-            .from("Switches")
-            .select()
-            .returns<Tables<"Switches">[]>();
-        setSwitches(data);
-    }
+    if (isLoading) return <>Loading</>;
     return (
         <>
             <h1>SwitchBoard</h1>
