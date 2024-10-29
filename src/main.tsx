@@ -7,6 +7,7 @@ import App from "./App.tsx";
 import Home from "./Routes/Home.tsx";
 import ErrorPage from "./ErrorPage.tsx";
 import Switches from "./Routes/Switches.tsx";
+import About from "./Routes/About.tsx";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path: "/switches",
                 element: <Switches />,
+            },
+            {
+                path: "/about",
+                element: <About />,
             },
         ],
     },

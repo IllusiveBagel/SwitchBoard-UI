@@ -5,6 +5,8 @@ import {
     selectSwitches,
     selectLoading,
 } from "../Features/Switches/switchesSlice";
+import GridItem from "../Components/GridItem";
+import styles from "./Switches.module.scss";
 
 const Switches = () => {
     const dispatch = useAppDispatch();
@@ -15,15 +17,14 @@ const Switches = () => {
         dispatch(fetchData());
     }, []);
 
-    if (isLoading) return <>Loading</>;
+    if (isLoading) return <h1>Loading</h1>;
     return (
         <>
-            <h1>SwitchBoard</h1>
-            <ul>
+            <div className={styles.gridContainer}>
                 {switches?.map((item) => (
-                    <li key={item.id}>{item.name}</li>
+                    <GridItem key={item.id} name={item.name} />
                 ))}
-            </ul>
+            </div>
         </>
     );
 };

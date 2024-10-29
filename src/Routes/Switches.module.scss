@@ -1,0 +1,11 @@
+.gridContainer {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 40px);
+    height: 100%;
+    gap: 40px;
+    align-items: start;
+    align-content: start;
+    justify-content: space-evenly;
+    padding: 0 20px;
+}

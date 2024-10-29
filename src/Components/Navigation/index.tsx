@@ -17,6 +17,11 @@ const Navigation = () => {
                             Switches
                         </Link>
                     </li>
+                    <li>
+                        <Link className={styles.navItem} to="/about">
+                            About
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </>
