@@ -1,12 +1,10 @@
-import styles from "./GridItem.module.scss";
-
 interface GridItemProps {
     name: string;
 }
 
 const GridItem = ({ name }: GridItemProps) => {
     return (
-        <div className={styles.gridItem}>
+        <div className="">
             <h1>{name}</h1>
         </div>
     );

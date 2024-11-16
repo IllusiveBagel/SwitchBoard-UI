@@ -6,7 +6,6 @@ import {
     selectLoading,
 } from "../Features/Switches/switchesSlice";
 import GridItem from "../Components/GridItem";
-import styles from "./Switches.module.scss";
 
 const Switches = () => {
     const dispatch = useAppDispatch();
@@ -20,7 +19,7 @@ const Switches = () => {
     if (isLoading) return <h1>Loading</h1>;
     return (
         <>
-            <div className={styles.gridContainer}>
+            <div className="">
                 {switches?.map((item) => (
                     <GridItem key={item.id} name={item.name} />
                 ))}

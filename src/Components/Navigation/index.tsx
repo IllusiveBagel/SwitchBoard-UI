@@ -1,24 +1,23 @@
 import { Link } from "react-router-dom";
-import styles from "./Navigation.module.scss";
 
 const Navigation = () => {
     return (
         <>
-            <div className={styles.appBar}></div>
-            <div className={styles.sideBar}>
+            <div className="wlvw h-16 bg-slate-800"></div>
+            <div className="w-80 h-[calc(100vh-4rem)] bg-slate-700">
                 <ul>
                     <li>
-                        <Link className={styles.navItem} to="/">
+                        <Link className="" to="/">
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link className={styles.navItem} to="/switches">
+                        <Link className="" to="/switches">
                             Switches
                         </Link>
                     </li>
                     <li>
-                        <Link className={styles.navItem} to="/about">
+                        <Link className="" to="/about">
                             About
                         </Link>
                     </li>
