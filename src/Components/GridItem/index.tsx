@@ -4,7 +4,7 @@ interface GridItemProps {
 
 const GridItem = ({ name }: GridItemProps) => {
     return (
-        <div className="">
+        <div className="aspect-square bg-transparent rounded-xl border-4 border-violet-900">
             <h1>{name}</h1>
         </div>
     );

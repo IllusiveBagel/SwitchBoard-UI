@@ -8,8 +8,8 @@ import {
 const Navigation = () => {
     return (
         <>
-            <div className="wlvw h-16 bg-slate-800"></div>
-            <div className="w-60 h-[calc(100vh-4rem)] bg-slate-700">
+            <div className="wlvw h-16 bg-slate-800 drop-shadow-md"></div>
+            <div className="w-60 h-[calc(100vh-4rem)] bg-slate-700 shadow-lg">
                 <ul className="list-none">
                     <li>
                         <Link
