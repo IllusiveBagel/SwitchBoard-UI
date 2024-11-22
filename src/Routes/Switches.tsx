@@ -11,6 +11,7 @@ import {
     Squares2X2Icon,
     FunnelIcon,
 } from "@heroicons/react/24/outline";
+import SwitchTable from "../Components/SwitchTable";
 
 const Switches = () => {
     const [isTable, setIsTable] = useState(false);
@@ -53,79 +54,8 @@ const Switches = () => {
                 </div>
             )}
             {isTable && (
-                <div className="w-[calc(100%-2.5rem)] m-5 mt-16">
-                    <table className="border-collapse border border-slate-500 w-full">
-                        <thead>
-                            <tr>
-                                <th className="border border-slate-600 bg-slate-700">
-                                    Name
-                                </th>
-                                <th className="border border-slate-600 bg-slate-700">
-                                    Manufacturer
-                                </th>
-                                <th className="border border-slate-600 bg-slate-700">
-                                    Actuation
-                                </th>
-                                <th className="border border-slate-600 bg-slate-700">
-                                    Bottom-Out
-                                </th>
-                                <th className="border border-slate-600 bg-slate-700">
-                                    Pre-Travel
-                                </th>
-                                <th className="border border-slate-600 bg-slate-700">
-                                    Total-Travel
-                                </th>
-                                <th className="border border-slate-600 bg-slate-700">
-                                    Type
-                                </th>
-                                <th className="border border-slate-600 bg-slate-700">
-                                    Spring
-                                </th>
-                                <th className="border border-slate-600 bg-slate-700">
-                                    Volume
-                                </th>
-                                <th className="border border-slate-600 bg-slate-700">
-                                    Factory Lubed
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody className="text-right">
-                            {switches?.map((item) => (
-                                <tr>
-                                    <td className="border border-slate-700 bg-slate-800 text-left">
-                                        {item.name}
-                                    </td>
-                                    <td className="border border-slate-700 bg-slate-800">
-                                        {item.manufacturer}
-                                    </td>
-                                    <td className="border border-slate-700 bg-slate-800">
-                                        {item.actuation}
-                                    </td>
-                                    <td className="border border-slate-700 bg-slate-800">
-                                        {item.bottomOut}
-                                    </td>
-                                    <td className="border border-slate-700 bg-slate-800">
-                                        {item.preTravel}
-                                    </td>
-                                    <td className="border border-slate-700 bg-slate-800">
-                                        {item.totalTravel}
-                                    </td>
-                                    <td className="border border-slate-700 bg-slate-800">
-                                        {item.type}
-                                    </td>
-                                    <td className="border border-slate-700 bg-slate-800">
-                                        {item.spring}
-                                    </td>
-                                    <td className="border border-slate-700 bg-slate-800">
-                                        {item.volume}
-                                    </td>
-                                    <td className="border border-slate-700 bg-slate-800">
-                                        {item.factoryLubed}
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                <div className="w-[calc(100%-2.5rem)] m-5 mt-16 h-[calc(100%-5.25rem)]">
+                    <SwitchTable switches={switches} />
                 </div>
             )}
         </>
